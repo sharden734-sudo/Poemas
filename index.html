@@ -4,20 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Poemas</title>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400&display=swap');
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   background:#eee9df;
   color:#201e1b;
   font-family:Inter,sans-serif;
-  font-weight:300;
+  font-weight:300
 }
-
+/* =========================
+   HERO
+========================= */
 header{
   min-height:48vh;
   display:grid;
@@ -29,11 +28,6 @@ header{
   position:relative;
   overflow:hidden;
 }
-
-/* =========================
-   HERO ATMOSPHERE
-========================= */
-
 header::before{
   content:"";
   position:absolute;
@@ -45,39 +39,42 @@ header::before{
   background:
     radial-gradient(
       circle,
-      rgba(238,233,223,.075) 0%,
-      rgba(238,233,223,.035) 25%,
-      rgba(238,233,223,0) 68%
+      rgba(238,233,223,.14) 0%,
+      rgba(238,233,223,.075) 22%,
+      rgba(238,233,223,.035) 42%,
+      rgba(238,233,223,0) 70%
     );
   left:50%;
   top:48%;
   transform:translate(-50%,-50%);
-  animation:heroGlow 12s ease-in-out infinite;
+  animation:heroGlow 8s ease-in-out infinite;
   pointer-events:none;
 }
-
 header::after{
   content:"";
   position:absolute;
   inset:-20%;
   background:
-    radial-gradient(circle at 18% 28%, rgba(238,233,223,.045) 0 1px, transparent 2px),
-    radial-gradient(circle at 73% 20%, rgba(238,233,223,.035) 0 1px, transparent 2px),
-    radial-gradient(circle at 31% 74%, rgba(238,233,223,.04) 0 1px, transparent 2px),
-    radial-gradient(circle at 82% 76%, rgba(238,233,223,.035) 0 1px, transparent 2px),
-    radial-gradient(circle at 55% 55%, rgba(238,233,223,.025) 0 1px, transparent 2px);
-  background-size:220px 220px,270px 270px,310px 310px,250px 250px,350px 350px;
+    radial-gradient(circle at 18% 28%,rgba(238,233,223,.045) 0 1px,transparent 2px),
+    radial-gradient(circle at 73% 20%,rgba(238,233,223,.035) 0 1px,transparent 2px),
+    radial-gradient(circle at 31% 74%,rgba(238,233,223,.04) 0 1px,transparent 2px),
+    radial-gradient(circle at 82% 76%,rgba(238,233,223,.035) 0 1px,transparent 2px),
+    radial-gradient(circle at 55% 55%,rgba(238,233,223,.025) 0 1px,transparent 2px);
+  background-size:
+    220px 220px,
+    270px 270px,
+    310px 310px,
+    250px 250px,
+    350px 350px;
   animation:heroDust 28s linear infinite;
   opacity:.65;
   pointer-events:none;
 }
-
 header > div{
   position:relative;
   z-index:2;
-  animation:heroEntrance 1.8s ease both;
+  animation:heroEntrance 1.8s ease both
 }
-
 header h1{
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(4rem,13vw,9rem);
@@ -85,9 +82,8 @@ header h1{
   line-height:.8;
   margin:0;
   position:relative;
-  animation:titleBreath 7s ease-in-out infinite;
+  animation:titleBreath 7s ease-in-out infinite
 }
-
 header h1::after{
   content:"";
   position:absolute;
@@ -98,107 +94,111 @@ header h1::after{
   background:#eee9df;
   opacity:.08;
   transform:scaleX(.4);
-  animation:lineBreath 7s ease-in-out infinite;
+  animation:lineBreath 7s ease-in-out infinite
 }
-
 header p{
   margin-top:55px;
   letter-spacing:.3em;
   text-transform:uppercase;
   font-size:.68rem;
   opacity:.55;
-  animation:subtitleBreath 7s ease-in-out infinite;
+  animation:subtitleBreath 7s ease-in-out infinite
 }
-
 @keyframes heroGlow{
   0%,100%{
-    transform:translate(-50%,-50%) scale(.85);
-    opacity:.65;
+    transform:translate(-50%,-50%) scale(.78);
+    opacity:.55
   }
-
   50%{
-    transform:translate(-50%,-50%) scale(1.08);
-    opacity:1;
+    transform:translate(-50%,-50%) scale(1.15);
+    opacity:1
   }
 }
-
 @keyframes heroDust{
   from{
-    transform:translate3d(0,0,0) rotate(0deg);
+    transform:translate3d(0,0,0) rotate(0deg)
   }
-
   to{
-    transform:translate3d(2%,-3%,0) rotate(2deg);
+    transform:translate3d(2%,-3%,0) rotate(2deg)
   }
 }
-
 @keyframes heroEntrance{
   from{
     opacity:0;
-    transform:translateY(12px);
+    transform:translateY(12px)
   }
-
   to{
     opacity:1;
-    transform:translateY(0);
+    transform:translateY(0)
   }
 }
-
 @keyframes titleBreath{
   0%,100%{
     opacity:.91;
-    transform:scale(1);
+    transform:scale(1)
   }
-
   50%{
     opacity:1;
-    transform:scale(1.012);
+    transform:scale(1.012)
   }
 }
-
 @keyframes lineBreath{
   0%,100%{
     opacity:.05;
-    transform:scaleX(.35);
+    transform:scaleX(.35)
   }
-
   50%{
     opacity:.12;
-    transform:scaleX(1);
+    transform:scaleX(1)
   }
 }
-
 @keyframes subtitleBreath{
-  0%,100%{
-    opacity:.45;
-  }
-
-  50%{
-    opacity:.65;
-  }
+  0%,100%{opacity:.45}
+  50%{opacity:.65}
 }
-
+/* =========================
+   MAIN
+========================= */
 main{
   max-width:1100px;
   margin:auto;
-  padding:70px 22px;
+  padding:70px 22px
 }
-
 .intro{
   font-family:"Cormorant Garamond",serif;
   font-size:1.7rem;
   text-align:center;
   margin:0 auto 70px;
   max-width:600px;
-  font-style:italic;
+  font-style:italic
 }
-
+/* Independent icon */
+.intro::after{
+  content:"✦";
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-style:normal;
+  font-size:1.15rem;
+  margin-top:25px;
+  margin-bottom:-43px;
+  opacity:.35;
+  animation:introSymbol 5s ease-in-out infinite
+}
+@keyframes introSymbol{
+  0%,100%{
+    opacity:.22;
+    transform:translateY(0) rotate(0deg)
+  }
+  50%{
+    opacity:.55;
+    transform:translateY(-3px) rotate(8deg)
+  }
+}
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-  gap:28px;
+  gap:28px
 }
-
 .card{
   min-height:430px;
   padding:45px 38px;
@@ -209,51 +209,42 @@ main{
   justify-content:space-between;
   transition:.4s;
   cursor:pointer;
-  overflow:hidden;
+  overflow:hidden
 }
-
 .card:hover{
   transform:translateY(-7px);
-  box-shadow:0 20px 50px #0001;
+  box-shadow:0 20px 50px #0001
 }
-
 .card:nth-child(2){
-  background:#d8ddd8;
+  background:#d8ddd8
 }
-
 .num{
   font-size:.65rem;
   letter-spacing:.25em;
-  opacity:.45;
+  opacity:.45
 }
-
 .card h2{
   font-family:"Cormorant Garamond",serif;
   font-weight:400;
   font-size:3rem;
   line-height:.9;
-  margin:0 0 22px;
+  margin:0 0 22px
 }
-
 .preview{
   font-family:"Cormorant Garamond",serif;
   font-size:1.25rem;
   line-height:1.35;
-  opacity:.75;
+  opacity:.75
 }
-
 .date{
   font-size:.62rem;
   letter-spacing:.2em;
   text-transform:uppercase;
-  opacity:.4;
+  opacity:.4
 }
-
-
 /* =========================
-   POEM I — LOVE
+   POEM I CARD
 ========================= */
-
 .card-one::before{
   content:"♡";
   position:absolute;
@@ -263,9 +254,8 @@ main{
   font-size:8rem;
   font-weight:300;
   opacity:.06;
-  animation:heartFloat 4s ease-in-out infinite;
+  animation:heartFloat 4s ease-in-out infinite
 }
-
 .card-one::after{
   content:"";
   position:absolute;
@@ -276,38 +266,31 @@ main{
   bottom:-70px;
   background:rgba(170,85,75,.13);
   filter:blur(20px);
-  animation:lovePulse 4s ease-in-out infinite;
+  animation:lovePulse 4s ease-in-out infinite
 }
-
 @keyframes heartFloat{
   0%,100%{
     transform:translateY(8px) rotate(-5deg);
-    opacity:.04;
+    opacity:.04
   }
-
   50%{
     transform:translateY(-20px) rotate(5deg);
-    opacity:.11;
+    opacity:.11
   }
 }
-
 @keyframes lovePulse{
   0%,100%{
     transform:scale(.8);
-    opacity:.35;
+    opacity:.35
   }
-
   50%{
     transform:scale(1.35);
-    opacity:.8;
+    opacity:.8
   }
 }
-
-
 /* =========================
-   POEM II — SUN
+   POEM II CARD
 ========================= */
-
 .card-two::before{
   content:"";
   position:absolute;
@@ -318,9 +301,8 @@ main{
   top:35px;
   background:rgba(195,135,60,.18);
   box-shadow:0 0 55px rgba(195,135,60,.12);
-  animation:sunCard 7s ease-in-out infinite;
+  animation:sunCard 7s ease-in-out infinite
 }
-
 .card-two::after{
   content:"";
   position:absolute;
@@ -331,47 +313,38 @@ main{
   border-radius:50%;
   background:rgba(75,80,70,.08);
   filter:blur(8px);
-  animation:earthCard 7s ease-in-out infinite;
+  animation:earthCard 7s ease-in-out infinite
 }
-
 @keyframes sunCard{
   0%,100%{
     transform:translateY(0);
-    opacity:.65;
+    opacity:.65
   }
-
   50%{
     transform:translateY(105px);
-    opacity:.25;
+    opacity:.25
   }
 }
-
 @keyframes earthCard{
   0%,100%{
-    transform:translateY(0);
+    transform:translateY(0)
   }
-
   50%{
-    transform:translateY(-12px);
+    transform:translateY(-12px)
   }
 }
-
-
 /* =========================
-   POEM III — NIGHT
+   POEM III CARD
 ========================= */
-
 .card-three{
   background:#171817 !important;
-  color:#eee9df;
+  color:#eee9df
 }
-
 .card-three .num,
 .card-three .preview,
 .card-three .date{
-  color:#eee9df;
+  color:#eee9df
 }
-
 .card-three::before{
   content:"";
   position:absolute;
@@ -384,9 +357,8 @@ main{
     radial-gradient(circle at 25% 70%,#fff 0 1px,transparent 2px),
     radial-gradient(circle at 65% 82%,#fff 0 1px,transparent 2px),
     radial-gradient(circle at 92% 88%,#fff 0 1px,transparent 2px);
-  animation:cardStars 3s ease-in-out infinite alternate;
+  animation:cardStars 4s ease-in-out infinite
 }
-
 .card-three::after{
   content:"";
   position:absolute;
@@ -396,31 +368,32 @@ main{
   top:100px;
   background:linear-gradient(90deg,transparent,#fff,transparent);
   transform:rotate(-25deg);
-  animation:cardShooting 5s ease-in-out infinite;
+  animation:cardShooting 5s ease-in-out infinite
 }
-
 @keyframes cardStars{
-  from{opacity:.25}
-  to{opacity:.8}
+  0%{
+    opacity:.25
+  }
+  50%{
+    opacity:.8
+  }
+  100%{
+    opacity:.25
+  }
 }
-
 @keyframes cardShooting{
   0%,65%,100%{
     right:-120px;
-    opacity:0;
+    opacity:0
   }
-
   70%{
     right:120%;
-    opacity:.8;
+    opacity:.8
   }
 }
-
-
 /* =========================
    POEM WINDOWS
 ========================= */
-
 .poem{
   display:none;
   position:fixed;
@@ -430,13 +403,11 @@ main{
   overflow-y:auto;
   overflow-x:hidden;
   padding:70px 25px;
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling:touch
 }
-
 .poem.open{
-  display:block;
+  display:block
 }
-
 .close{
   position:fixed;
   right:25px;
@@ -446,40 +417,33 @@ main{
   font-size:2rem;
   font-weight:200;
   cursor:pointer;
-  z-index:50;
+  z-index:50
 }
-
 .poem-inner{
   max-width:650px;
   margin:8vh auto 15vh;
   position:relative;
-  z-index:10;
+  z-index:10
 }
-
 .poem h2{
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(3rem,10vw,6rem);
   font-weight:300;
   line-height:.85;
-  margin:0 0 70px;
+  margin:0 0 70px
 }
-
 .poem-text{
   font-family:"Cormorant Garamond",serif;
   font-size:1.55rem;
   line-height:1.5;
-  white-space:pre-line;
+  white-space:pre-line
 }
-
-
 /* =========================
    POEM I MODAL
 ========================= */
-
 #p0{
-  background:#eee9df;
+  background:#eee9df
 }
-
 #p0::before{
   content:"♡";
   position:fixed;
@@ -491,9 +455,8 @@ main{
   color:#8d4e48;
   opacity:.035;
   animation:modalHeart 6s ease-in-out infinite;
-  pointer-events:none;
+  pointer-events:none
 }
-
 #p0::after{
   content:"";
   position:fixed;
@@ -505,45 +468,37 @@ main{
   background:rgba(175,85,75,.08);
   filter:blur(35px);
   animation:modalLoveGlow 5s ease-in-out infinite;
-  pointer-events:none;
+  pointer-events:none
 }
-
 @keyframes modalHeart{
   0%,100%{
     transform:translateY(15px) rotate(-4deg);
-    opacity:.025;
+    opacity:.025
   }
-
   50%{
     transform:translateY(-25px) rotate(4deg);
-    opacity:.08;
+    opacity:.08
   }
 }
-
 @keyframes modalLoveGlow{
   0%,100%{
-    transform:scale(.8);
+    transform:scale(.8)
   }
-
   50%{
-    transform:scale(1.4);
+    transform:scale(1.4)
   }
 }
-
-
 /* =========================
-   POEM II MODAL — SUNSET
+   POEM II MODAL
 ========================= */
-
 #p1{
   background:linear-gradient(
     to bottom,
     #eee9df 0%,
     #e9dfd2 55%,
     #d3c3af 100%
-  );
+  )
 }
-
 #p1::before{
   content:"";
   position:fixed;
@@ -556,9 +511,8 @@ main{
   background:rgba(190,125,55,.20);
   box-shadow:0 0 70px rgba(190,125,55,.13);
   animation:realSunset 9s ease-in-out infinite;
-  pointer-events:none;
+  pointer-events:none
 }
-
 #p1::after{
   content:"";
   position:fixed;
@@ -572,58 +526,47 @@ main{
     transparent
   );
   animation:realDarkness 9s ease-in-out infinite;
-  pointer-events:none;
+  pointer-events:none
 }
-
 @keyframes realSunset{
   0%,100%{
     top:18%;
-    opacity:.8;
+    opacity:.8
   }
-
   50%{
     top:72%;
-    opacity:.2;
+    opacity:.2
   }
 }
-
 @keyframes realDarkness{
   0%,100%{
-    opacity:.2;
+    opacity:.2
   }
-
   50%{
-    opacity:1;
+    opacity:1
   }
 }
-
-
 /* =========================
-   POEM III — NIGHT SKY
+   POEM III MODAL
 ========================= */
-
 #p2{
   background:#0b0d0f;
   color:#eee9df;
   overflow-y:auto;
   overflow-x:hidden;
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling:touch
 }
-
 #p2 .close{
-  color:#eee9df;
+  color:#eee9df
 }
-
 #p2 .poem-text{
-  color:#eee9df;
+  color:#eee9df
 }
-
 #p2::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-
   background:
     radial-gradient(circle at 10% 15%,rgba(255,255,255,.9) 0 1px,transparent 2px),
     radial-gradient(circle at 23% 38%,rgba(255,255,255,.65) 0 1px,transparent 2px),
@@ -637,10 +580,8 @@ main{
     radial-gradient(circle at 55% 68%,rgba(255,255,255,.55) 0 1px,transparent 2px),
     radial-gradient(circle at 76% 78%,rgba(255,255,255,.75) 0 1px,transparent 2px),
     radial-gradient(circle at 90% 65%,rgba(255,255,255,.5) 0 1px,transparent 2px);
-
-  animation:nightStars 5s ease-in-out infinite alternate;
+  animation:nightStars 5s ease-in-out infinite
 }
-
 #p2::after{
   content:"";
   position:fixed;
@@ -656,37 +597,36 @@ main{
   );
   transform:rotate(-28deg);
   animation:shootingStar 6s ease-in-out infinite;
-  pointer-events:none;
+  pointer-events:none
 }
-
 @keyframes nightStars{
-  from{opacity:.25}
-  to{opacity:.85}
+  0%{
+    opacity:.25
+  }
+  50%{
+    opacity:.85
+  }
+  100%{
+    opacity:.25
+  }
 }
-
 @keyframes shootingStar{
   0%,55%,100%{
     right:-200px;
     top:22%;
-    opacity:0;
+    opacity:0
   }
-
   60%{
     right:110%;
     top:58%;
-    opacity:.9;
+    opacity:.9
   }
-
   63%{
     right:125%;
     top:62%;
-    opacity:0;
+    opacity:0
   }
 }
-
-
-/* SECOND SHOOTING STAR */
-
 #p2 .poem-inner::before{
   content:"";
   position:fixed;
@@ -702,298 +642,205 @@ main{
   );
   transform:rotate(-25deg);
   animation:shootingStarTwo 9s ease-in-out infinite;
-  pointer-events:none;
+  pointer-events:none
 }
-
 @keyframes shootingStarTwo{
   0%,68%,100%{
     right:-150px;
-    opacity:0;
+    opacity:0
   }
-
   72%{
     right:110%;
-    opacity:.7;
+    opacity:.7
   }
-
   75%{
     right:125%;
-    opacity:0;
+    opacity:0
   }
 }
-
-
+/* =========================
+   FOOTER
+========================= */
+footer{
+  text-align:center;
+  padding:70px;
+  font-size:.65rem;
+  letter-spacing:.2em;
+  opacity:.4
+}
 /* =========================
    MOBILE
 ========================= */
-
 @media(max-width:600px){
-
   header{
-    min-height:48vh;
+    min-height:48vh
   }
-
   header h1{
-    font-size:clamp(4rem,18vw,7rem);
+    font-size:clamp(4rem,18vw,7rem)
   }
-
   header p{
     font-size:.58rem;
-    letter-spacing:.22em;
+    letter-spacing:.22em
   }
-
   .card{
-    min-height:430px;
+    min-height:430px
   }
-
   .poem{
-    padding:70px 25px;
+    padding:70px 25px
   }
-
   .poem-inner{
     margin-top:6vh;
-    margin-bottom:20vh;
+    margin-bottom:20vh
   }
-
   .poem h2{
-    margin-bottom:55px;
+    margin-bottom:55px
   }
-
   .poem-text{
-    font-size:1.4rem;
+    font-size:1.4rem
   }
 }
-
-
 /* =========================
    REDUCED MOTION
 ========================= */
-
 @media(prefers-reduced-motion:reduce){
-
   *,
   *::before,
   *::after{
     animation:none !important;
-    transition:none !important;
+    transition:none !important
   }
 }
-
 </style>
 </head>
-
 <body>
-
 <header>
-
   <div>
-
     <h1>Poemas</h1>
-
     <p>coisas que não soube dizer</p>
-
   </div>
-
 </header>
-
-
 <main>
-
 <p class="intro">
 “Às vezes, escrever é a única maneira de deixar uma emoção existir.”
 </p>
-
-
 <section class="grid">
-
-
 <article class="card card-one" onclick="openPoem(0)">
-
   <div class="num">I</div>
-
   <div>
-
     <h2>Um sobre o quanto te amo</h2>
-
     <p class="preview">
       Queria escrever-te um poema.<br>
       Um sobre o quando te amo.<br>
       Mas só me saíram emoções.
     </p>
-
   </div>
-
   <div class="date">poema I</div>
-
 </article>
-
-
 <article class="card card-two" onclick="openPoem(1)">
-
   <div class="num">II</div>
-
   <div>
-
     <h2>Eu vivo no sol</h2>
-
     <p class="preview">
       Eu vivo no sol.<br>
       Quando chega o pôr-da-terra,<br>
       o meu mundo também escurece.
     </p>
-
   </div>
-
   <div class="date">poema II</div>
-
 </article>
-
-
 <article class="card card-three" onclick="openPoem(2)">
-
   <div class="num">III</div>
-
   <div>
-
     <h2>A Certeza Incerta</h2>
-
     <p class="preview">
       As estrelas sobre os meus olhos<br>
       Estão perto o suficiente pra ver,<br>
       Estão longe demais pra tocar.
     </p>
-
   </div>
-
   <div class="date">poema III</div>
-
 </article>
-
-
 </section>
-
 </main>
-
-
 <footer>
 uma coleção em construção
 </footer>
-
-
-<!-- POEMA I -->
-
+<!-- =========================
+     POEM I
+========================= -->
 <div class="poem" id="p0">
-
 <button class="close" onclick="closePoem()">×</button>
-
 <div class="poem-inner">
-
 <h2>Um sobre o quanto te amo</h2>
-
 <div class="poem-text">
 Queria escrever-te um poema.
 Um sobre o quando te amo.
 Mas só me saíram emoções.
-
 Palavras me faltaram,
 Mas nunca sensações,
 Sons, e razões
 De escrever-te um poema.
-
 Mesmo assim, não sai,
 Quanto mais tento,
 Mais me saem mais e mais razões
 De escrever-te um poema.
 Um sobre o quanto te amo.
 </div>
-
 </div>
-
 </div>
-
-
-<!-- POEMA II -->
-
+<!-- =========================
+     POEM II
+========================= -->
 <div class="poem" id="p1">
-
 <button class="close" onclick="closePoem()">×</button>
-
 <div class="poem-inner">
-
 <h2>Eu vivo no sol</h2>
-
 <div class="poem-text">
 Eu vivo no sol.
 Quando chega o pôr-da-terra,
 O meu mundo também escurece.
-
 Os dias são curtos.
 Em um minuto está lá,
 Mas em quinze, dez, cinco,
 A terra desaparece.
-
 E com ela leva o dia.
 Mas o que mais me entristece.
 É esperar para ver-te de novo nela.
 </div>
-
 </div>
-
 </div>
-
-
-<!-- POEMA III -->
-
+<!-- =========================
+     POEM III
+========================= -->
 <div class="poem" id="p2">
-
 <button class="close" onclick="closePoem()">×</button>
-
 <div class="poem-inner">
-
 <h2>A Certeza Incerta</h2>
-
 <div class="poem-text">
 As estrelas sobre os meus olhos
 Estão perto o suficiente pra ver,
 Estão longe demais pra tocar.
 Em que verdade acreditar?
-
 No teu amor se reflete,
 A certeza incerta das estrelas.
-
 Está perto o suficiente pra ver
 Está distante demais pra tocar,
 Em que verdade acreditar?
-
 Mesmo assim escolho eu,
 A certeza incerta do nosso amor.
 </div>
-
 </div>
-
 </div>
-
-
 <script>
-
 function openPoem(i){
-
   document.getElementById('p'+i).classList.add('open');
-
   document.body.style.overflow='hidden';
-
 }
-
 function closePoem(){
-
   document.querySelectorAll('.poem')
     .forEach(x=>x.classList.remove('open'));
-
   document.body.style.overflow='';
-
 }
-
 </script>
-
 </body>
 </html>
