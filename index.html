@@ -172,7 +172,6 @@ main{
   max-width:600px;
   font-style:italic
 }
-/* Independent icon */
 .intro::after{
   content:"✦";
   display:block;
@@ -371,15 +370,9 @@ main{
   animation:cardShooting 5s ease-in-out infinite
 }
 @keyframes cardStars{
-  0%{
-    opacity:.25
-  }
-  50%{
-    opacity:.8
-  }
-  100%{
-    opacity:.25
-  }
+  0%{opacity:.25}
+  50%{opacity:.8}
+  100%{opacity:.25}
 }
 @keyframes cardShooting{
   0%,65%,100%{
@@ -435,8 +428,13 @@ main{
 .poem-text{
   font-family:"Cormorant Garamond",serif;
   font-size:1.55rem;
-  line-height:1.5;
-  white-space:pre-line
+  line-height:1.55
+}
+.stanza{
+  margin:0 0 1.65em
+}
+.stanza:last-child{
+  margin-bottom:0
 }
 /* =========================
    POEM I MODAL
@@ -600,15 +598,9 @@ main{
   pointer-events:none
 }
 @keyframes nightStars{
-  0%{
-    opacity:.25
-  }
-  50%{
-    opacity:.85
-  }
-  100%{
-    opacity:.25
-  }
+  0%{opacity:.25}
+  50%{opacity:.85}
+  100%{opacity:.25}
 }
 @keyframes shootingStar{
   0%,55%,100%{
@@ -696,7 +688,11 @@ footer{
     margin-bottom:55px
   }
   .poem-text{
-    font-size:1.4rem
+    font-size:1.4rem;
+    line-height:1.55
+  }
+  .stanza{
+    margin-bottom:1.7em
   }
 }
 /* =========================
@@ -743,7 +739,7 @@ footer{
     <p class="preview">
       Eu vivo no sol.<br>
       Quando chega o pôr-da-terra,<br>
-      o meu mundo também escurece.
+      O meu mundo também escurece.
     </p>
   </div>
   <div class="date">poema II</div>
@@ -773,18 +769,24 @@ uma coleção em construção
 <div class="poem-inner">
 <h2>Um sobre o quanto te amo</h2>
 <div class="poem-text">
-Queria escrever-te um poema.
-Um sobre o quando te amo.
+<p class="stanza">
+Queria escrever-te um poema.<br>
+Um sobre o quando te amo.<br>
 Mas só me saíram emoções.
-Palavras me faltaram,
-Mas nunca sensações,
-Sons, e razões
+</p>
+<p class="stanza">
+Palavras me faltaram,<br>
+Mas nunca sensações,<br>
+Sons, e razões<br>
 De escrever-te um poema.
-Mesmo assim, não sai,
-Quanto mais tento,
-Mais me saem mais e mais razões
-De escrever-te um poema.
+</p>
+<p class="stanza">
+Mesmo assim, não sai,<br>
+Quanto mais tento,<br>
+Mais me saem mais e mais razões<br>
+De escrever-te um poema.<br>
 Um sobre o quanto te amo.
+</p>
 </div>
 </div>
 </div>
@@ -796,16 +798,22 @@ Um sobre o quanto te amo.
 <div class="poem-inner">
 <h2>Eu vivo no sol</h2>
 <div class="poem-text">
-Eu vivo no sol.
-Quando chega o pôr-da-terra,
+<p class="stanza">
+Eu vivo no sol.<br>
+Quando chega o pôr-da-terra,<br>
 O meu mundo também escurece.
-Os dias são curtos.
-Em um minuto está lá,
-Mas em quinze, dez, cinco,
+</p>
+<p class="stanza">
+Os dias são curtos.<br>
+Em um minuto está lá,<br>
+Mas em quinze, dez, cinco,<br>
 A terra desaparece.
-E com ela leva o dia.
-Mas o que mais me entristece.
+</p>
+<p class="stanza">
+E com ela leva o dia.<br>
+Mas o que mais me entristece.<br>
 É esperar para ver-te de novo nela.
+</p>
 </div>
 </div>
 </div>
@@ -817,17 +825,25 @@ Mas o que mais me entristece.
 <div class="poem-inner">
 <h2>A Certeza Incerta</h2>
 <div class="poem-text">
-As estrelas sobre os meus olhos
-Estão perto o suficiente pra ver,
-Estão longe demais pra tocar.
+<p class="stanza">
+As estrelas sobre os meus olhos<br>
+Estão perto o suficiente pra ver,<br>
+Estão longe demais pra tocar.<br>
 Em que verdade acreditar?
-No teu amor se reflete,
+</p>
+<p class="stanza">
+No teu amor se reflete,<br>
 A certeza incerta das estrelas.
-Está perto o suficiente pra ver
-Está distante demais pra tocar,
+</p>
+<p class="stanza">
+Está perto o suficiente pra ver<br>
+Está distante demais pra tocar,<br>
 Em que verdade acreditar?
-Mesmo assim escolho eu,
+</p>
+<p class="stanza">
+Mesmo assim escolho eu,<br>
 A certeza incerta do nosso amor.
+</p>
 </div>
 </div>
 </div>
